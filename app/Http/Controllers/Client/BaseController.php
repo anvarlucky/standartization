@@ -22,16 +22,6 @@ class BaseController extends Controller
     protected const CODE_ACCESS_DENIED = 403;
     protected $client;
 
-    public function __construct2()
-    {
-        $this->headers = [
-            'Accept'        => 'application/json',
-            'Language'      => app()->getLocale(),
-            '_token' => csrf_token()
-        ];
-        $this->client = new Client(['base_uri' => config('app.api_url')]);
-    }
-
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
@@ -183,8 +173,4 @@ class BaseController extends Controller
         }
 
     }
-    /*
-        protected function view($url, $params = []){
-            return view($this->viewPath.'.'.$url, $params);
-        }*/
 }
