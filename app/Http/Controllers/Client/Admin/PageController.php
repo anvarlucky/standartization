@@ -28,7 +28,33 @@ class PageController extends Controller
             return redirect()->route('pages.index');
         }
         else{
-            return redirect()->back()->withErrors();
+            return redirect()->back();
+        }
+    }
+
+    public function edit($id){
+        $page = Page::select('*')->where('id',$id)->first();
+        return view($this->page.'.edit',['page' => $page]);
+    }
+
+    public function update($id,Request $request){
+        $request = $request->except('_token');
+        $page = Page::select('*')->where('id',$id)->first();
+        $page->name = $request['name'];
+        $page = $page->save();
+        if($page == true){
+            return redirect()->route('pages.index');
+        }
+    }
+
+    public function destroy($id){
+        $page = Page::find($id);
+        $page->delete();
+        if ($page==true){
+            return redirect()->route('pages.index');
+        }
+        else{
+            return redirect()->back();
         }
     }
 }

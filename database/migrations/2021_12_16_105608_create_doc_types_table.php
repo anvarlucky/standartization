@@ -15,7 +15,11 @@ class CreateDocTypesTable extends Migration
     {
         Schema::create('doc_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('classification_id');
+            $table->foreign('classification_id')->references('id')->on('classifications')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

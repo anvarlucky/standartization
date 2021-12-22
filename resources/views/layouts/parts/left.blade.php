@@ -6,7 +6,7 @@
         <a href="categories" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
             <p class="nav-panel-text">Kategoriyalar</p>
         </a>
-        <a href="" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
+        <a href="classifications" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
             <p class="nav-panel-text">Sinflanishlar</p>
         </a>
         <a href="" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
