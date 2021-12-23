@@ -23,4 +23,8 @@ class DocType extends Model
     public function classification(){
         return $this->belongsTo('App\Models\v1\Classification');
     }
+
+    public function standarts(){
+        return $this->hasMany('App\Models\v1\Standart');
+    }
 }

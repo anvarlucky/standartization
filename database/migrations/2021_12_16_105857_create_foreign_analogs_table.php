@@ -15,7 +15,9 @@ class CreateForeignAnalogsTable extends Migration
     {
         Schema::create('foreign_analogs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
