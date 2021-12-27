@@ -32,7 +32,7 @@ class CreateStandartsTable extends Migration
             $table->string('photo_scope')->nullable(); //oblast premenenie rasm
             $table->text('normative_references'); //normativnie ssilki
             $table->string('photo_normative_references')->nullable(); //normativnie ssilki rasm
-            $table->text('classifications'); //Klassifikatsiya
+            $table->text('classifications'); //Klassi fikatsiya
             $table->string('photo_classifications')->nullable(); //Klassificatsiya rasm
             $table->text('technical_requirement'); // texnicheskie trebovanie
             $table->string('photo_technical_requirement')->nullable(); //texnicheskie trebovanie rasm
@@ -45,7 +45,7 @@ class CreateStandartsTable extends Migration
             $table->text('appendix_a_reference'); //prilojenie A spravochnoe
             $table->string('photo_appendix_a_reference')->nullable(); // prilojeni a spravochnoe rasm
             $table->text('bibliography'); //Bibliografiya
-            $table->string('photo_bibliography'); //bibliografiya rasm
+            $table->string('photo_bibliography')->nullable(); //bibliografiya rasm
             $table->text('bibliography_data'); //bibligoraficehskie dannie
             $table->string('photo_bibliography_data')->nullable(); //bibliograficheskie dannie rasm
             $table->string('doc_standart')->nullable();

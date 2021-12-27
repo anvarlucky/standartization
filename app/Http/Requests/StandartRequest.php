@@ -25,7 +25,10 @@ class StandartRequest extends FormRequest
     {
         return [
             'doc_type_id' => 'required',
-            'title' => 'required'
+            'title' => 'required',
+            //'photo_scope' => 'max:5120|mimes:jpeg,png,jpg',
+            //'doc_standart' => 'max:5120|mimes:doc,docx',
+            //'pdf_standart' => 'max:5120|mimes:pdf'
         ];
     }
 }

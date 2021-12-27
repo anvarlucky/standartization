@@ -12,7 +12,7 @@ class Standart extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded = [];
-    public const STORAGE_URL_SCOPE = 'public/standart/photo_scope';
+    public const STORAGE_URL_SCOPE = 'public/scope';
     public const STORAGE_URL_NORMATIVE = 'public/standart/photo_normative_references';
     public const STORAGE_URL_CLASSIFICATONS = 'public/standart/photo_classifications';
     public const STORAGE_URL_TECHNICAL = 'public/standart/photo_technical_requirement';
@@ -22,6 +22,8 @@ class Standart extends Model
     public const STORAGE_URL_APPENDIX = 'public/standart/photo_appendix_a_reference';
     public const STORAGE_URL_BIBLIOGRAPHY = 'public/standart/photo_bibliography';
     public const STORAGE_URL_BIBLIOGRAPHY_DATA = 'public/standart/photo_bibliography_data';
+    public const STORAGE_URL_DOC = 'public/docstandart';
+    public const STORAGE_URL_PDF = 'public/pdfstandart';
 
     public static function uploadPhotoScope($uploadFile){
         $filename = time().$uploadFile->getClientOriginalName();
@@ -117,6 +119,24 @@ class Standart extends Model
         $filename = time().$uploadFile->getClientOriginalName();
         Storage::disk('local')->putFileAs(
             self::STORAGE_URL_BIBLIOGRAPHY_DATA,
+            $uploadFile,
+            $filename
+        );
+        return $filename;
+    }
+    public static function uploadDoc($uploadFile){
+        $filename = time().$uploadFile->getClientOriginalName();
+        Storage::disk('local')->putFileAs(
+            self::STORAGE_URL_DOC,
+            $uploadFile,
+            $filename
+        );
+        return $filename;
+    }
+    public static function uploadPdf($uploadFile){
+        $filename = time().$uploadFile->getClientOriginalName();
+        Storage::disk('local')->putFileAs(
+            self::STORAGE_URL_PDF,
             $uploadFile,
             $filename
         );

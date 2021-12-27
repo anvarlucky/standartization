@@ -43,3 +43,101 @@
     <label for="">Qaysi standart o`rniga</label>
     {{Form::text('which_instead_standart', $standart->which_instead_standart??null, ['class' => 'form-control'])}}
 </div>
+
+<div class="form-group">
+    <label for=""><b>Qo`llanilish hududi</b></label>
+    {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Qo`llanilish hududi rasm</label>
+    {{Form::file('photo_scope', $standart->photo_scope??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for=""><b>Normativ havolalar</b></label>
+    {{Form::textarea('normative_references', $standart->normative_references??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Normativ havolalar rasm</label>
+    {{Form::file('photo_normative_references', $standart->photo_normative_references??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Klassifikatsiya</b></label>
+    {{Form::textarea('classifications', $standart->classifications??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Klassifikatsiya rasm</label>
+    {{Form::file('photo_classifications', $standart->photo_classifications??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Texnik talab</b></label>
+    {{Form::textarea('technical_requirement', $standart->technical_requirement??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Texnik talab rasm</label>
+    {{Form::file('photo_technical_requirement', $standart->photo_technical_requirement??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Havfsizlik talabi</b></label>
+    {{Form::textarea('safety_requirement', $standart->safety_requirement??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Havfsizlik talabi rasm</label>
+    {{Form::file('photo_safety_requirement', $standart->photo_safety_requirement??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Qabul qilish qoidalari </b></label>
+    {{Form::textarea('acceptance_rule', $standart->acceptance_rule??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Qabul qilish qoidalari rasm</label>
+    {{Form::file('photo_acceptance_rules', $standart->photo_acceptance_rules??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Nazorat qilish usullari</b></label>
+    {{Form::textarea('control_method', $standart->control_method??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Nazorat qilish usullari rasm</label>
+    {{Form::file('photo_control_method', $standart->photo_control_method??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Ilova A</b></label>
+    {{Form::textarea('appendix_a_reference', $standart->appendix_a_reference??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Ilova A rasm</label>
+    {{Form::file('photo_appendix_a_reference', $standart->photo_appendix_a_reference??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Bibliografiya</b></label>
+    {{Form::textarea('bibliography', $standart->bibliography??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Bibliografiya rasm</label>
+    {{Form::file('photo_bibliography', $standart->photo_bibliography??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for=""><b>Bibliografik malumotlar</b></label>
+    {{Form::textarea('bibliography_data', $standart->bibliography_data??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Bibliografik malumotlar rasm</label>
+    {{Form::file('photo_bibliography_data', $standart->photo_bibliography_data??null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
+    <label for="">Standart Document WORD</label>
+    {{Form::file('doc_standart', $standart->doc_standart??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
+    <label for="">Standart Document PDF</label>
+    {{Form::file('pdf_standart', $standart->pdf_standart??null, ['class' => 'form-control'])}}
+</div>

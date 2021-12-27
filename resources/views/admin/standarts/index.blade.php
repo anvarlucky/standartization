@@ -28,14 +28,14 @@
                             <td class="lightblue-color w-2 align-middle">
                                 <a href="{{route('standarts.edit', $standart->id)}}" class="btn btn-outline-primary mr-3 text-nowrap">O`zgartirish</a>
                             </td>
-                            <td class="darkblue-color text-center text-nowrap align-middle">{{$standart->name}}</td>
-                            <td class="darkblue-color text-center text-nowrap align-middle">{{$standart->doc_types->name}}</td>
+                            <td class="darkblue-color text-center text-nowrap align-middle">{{$standart->title}}</td>
+                            <td class="darkblue-color text-center text-nowrap align-middle">{{$standart->doc_type->name}}</td>
                             </td>
                             <td class="lightblue-color w-2 align-middle">
                                 <form action="{{ route('standarts.destroy', $standart->id)}}" method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <input class="btn btn-outline-danger mr-3" type="submit" onclick="return confirm('Rostdan ham {{$standart->name}} o`chirmoqchimisiz?')" value="O`chirish" />
+                                    <input class="btn btn-outline-danger mr-3" type="submit" onclick="return confirm('Rostdan ham {{$standart->title}} o`chirmoqchimisiz?')" value="O`chirish" />
                                 </form>
                             </td>
                         </tr>
