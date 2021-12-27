@@ -19,6 +19,11 @@ class StandartController extends Controller
         return view($this->standart . '.index', ['standarts' => $standarts]);
     }
 
+    public function show($id){
+        $standart = Standart::where('id',$id)->first();
+        return view($this->standart.'.show', ['standart' => $standart]);
+    }
+
     public function create()
     {
         $doc_types = DocType::all();
@@ -57,7 +62,6 @@ class StandartController extends Controller
     {
         $standart = Standart::select('*')->where('id', $id)->first();
         $doc_types = DocType::all();
-
         return view($this->standart.'.edit', ['standart' => $standart, 'doc_types' => $doc_types]);
     }
 
@@ -65,7 +69,18 @@ class StandartController extends Controller
     {
         $request = $request->except('_token');
         $standart = Standart::select('*')->where('id', $id)->first();
-        $standart->name = $request['name'];
+        $standart->title = $request['title'];
+        $standart->doc_type_id = $request['doc_type_id'];
+        $standart->developed_organization = $request['developed_organization'];
+        $standart->organization = $request['organization'];
+        $standart->approved = $request['approved'];
+        $standart->entry_into_force = $request['entry_into_force'];
+        $standart->previous_edit = $request['previous_edit'];
+        $standart->status = $request['status'];
+        $standart->foreign_analogs = $request['foreign_analogs'];
+        $standart->pages = $request['pages'];
+        $standart->which_instead_standart = $request['which_instead_standart'];
+        $standart->scope = $request['scope'];
         $standart = $standart->save();
         if ($standart == true) {
             return redirect()->route('standarts.index');

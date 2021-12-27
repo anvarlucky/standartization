@@ -28,7 +28,7 @@
                             <td class="lightblue-color w-2 align-middle">
                                 <a href="{{route('standarts.edit', $standart->id)}}" class="btn btn-outline-primary mr-3 text-nowrap">O`zgartirish</a>
                             </td>
-                            <td class="darkblue-color text-center text-nowrap align-middle">{{$standart->title}}</td>
+                            <td class="darkblue-color text-center text-nowrap align-middle"><a href="{{route('standarts.show',$standart->id)}}">{{$standart->title}}</a> </td>
                             <td class="darkblue-color text-center text-nowrap align-middle">{{$standart->doc_type->name}}</td>
                             </td>
                             <td class="lightblue-color w-2 align-middle">

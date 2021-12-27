@@ -50,7 +50,7 @@
 </div>
 <div class="form-group">
     <label for="">Qo`llanilish hududi rasm</label>
-    {{Form::file('photo_scope', $standart->photo_scope??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_scope', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
     <label for=""><b>Normativ havolalar</b></label>
@@ -58,7 +58,7 @@
 </div>
 <div class="form-group">
     <label for="">Normativ havolalar rasm</label>
-    {{Form::file('photo_normative_references', $standart->photo_normative_references??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_normative_references', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -67,7 +67,7 @@
 </div>
 <div class="form-group">
     <label for="">Klassifikatsiya rasm</label>
-    {{Form::file('photo_classifications', $standart->photo_classifications??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_classifications', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -76,7 +76,7 @@
 </div>
 <div class="form-group">
     <label for="">Texnik talab rasm</label>
-    {{Form::file('photo_technical_requirement', $standart->photo_technical_requirement??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_technical_requirement', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -85,7 +85,7 @@
 </div>
 <div class="form-group">
     <label for="">Havfsizlik talabi rasm</label>
-    {{Form::file('photo_safety_requirement', $standart->photo_safety_requirement??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_safety_requirement', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -94,7 +94,7 @@
 </div>
 <div class="form-group">
     <label for="">Qabul qilish qoidalari rasm</label>
-    {{Form::file('photo_acceptance_rules', $standart->photo_acceptance_rules??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_acceptance_rules', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -103,7 +103,7 @@
 </div>
 <div class="form-group">
     <label for="">Nazorat qilish usullari rasm</label>
-    {{Form::file('photo_control_method', $standart->photo_control_method??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_control_method', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -112,7 +112,7 @@
 </div>
 <div class="form-group">
     <label for="">Ilova A rasm</label>
-    {{Form::file('photo_appendix_a_reference', $standart->photo_appendix_a_reference??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_appendix_a_reference', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -121,7 +121,7 @@
 </div>
 <div class="form-group">
     <label for="">Bibliografiya rasm</label>
-    {{Form::file('photo_bibliography', $standart->photo_bibliography??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_bibliography', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
@@ -130,14 +130,14 @@
 </div>
 <div class="form-group">
     <label for="">Bibliografik malumotlar rasm</label>
-    {{Form::file('photo_bibliography_data', $standart->photo_bibliography_data??null, ['class' => 'form-control'])}}
+    {{Form::file('photo_bibliography_data', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
     <label for="">Standart Document WORD</label>
-    {{Form::file('doc_standart', $standart->doc_standart??null, ['class' => 'form-control'])}}
+    {{Form::file('doc_standart', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
     <label for="">Standart Document PDF</label>
-    {{Form::file('pdf_standart', $standart->pdf_standart??null, ['class' => 'form-control'])}}
+    {{Form::file('pdf_standart', ['class' => 'form-control'])}}
 </div>
