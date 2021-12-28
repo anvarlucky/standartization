@@ -45,51 +45,51 @@
 </div>
 
 <div class="form-group">
-    <label for=""><b>Qo`llanilish hududi</b></label>
+    <label for=""><b>1.Qo`llash sohasi</b></label>
     {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for="">Qo`llanilish hududi rasm</label>
+    <label for="">Qo`llash sohasi rasm</label>
     {{Form::file('photo_scope', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for=""><b>Normativ havolalar</b></label>
+    <label for=""><b>2.Meyoriy havolalar</b></label>
     {{Form::textarea('normative_references', $standart->normative_references??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for="">Normativ havolalar rasm</label>
+    <label for="">Meyoriy havolalar rasm</label>
     {{Form::file('photo_normative_references', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
-    <label for=""><b>Klassifikatsiya</b></label>
+    <label for=""><b>3.Tasniflar va shartli belgilar</b></label>
     {{Form::textarea('classifications', $standart->classifications??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for="">Klassifikatsiya rasm</label>
+    <label for="">Tasniflar va shartli belgilar rasm</label>
     {{Form::file('photo_classifications', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
-    <label for=""><b>Texnik talab</b></label>
+    <label for=""><b>4.Texnik talablar</b></label>
     {{Form::textarea('technical_requirement', $standart->technical_requirement??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for="">Texnik talab rasm</label>
+    <label for="">Texnik talablar rasm</label>
     {{Form::file('photo_technical_requirement', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
-    <label for=""><b>Havfsizlik talabi</b></label>
+    <label for=""><b>5.Havfsizlik va atrof muhitni muhofaza qilish talablari</b></label>
     {{Form::textarea('safety_requirement', $standart->safety_requirement??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for="">Havfsizlik talabi rasm</label>
+    <label for="">Havfsizlik va atrof muhitni muhofaza qilish talablari rasm</label>
     {{Form::file('photo_safety_requirement', ['class' => 'form-control'])}}
 </div>
 
 <div class="form-group">
-    <label for=""><b>Qabul qilish qoidalari </b></label>
+    <label for=""><b>6.Qabul qilish qoidalari </b></label>
     {{Form::textarea('acceptance_rule', $standart->acceptance_rule??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
@@ -98,11 +98,11 @@
 </div>
 
 <div class="form-group">
-    <label for=""><b>Nazorat qilish usullari</b></label>
+    <label for=""><b>7.Nazorat usullari</b></label>
     {{Form::textarea('control_method', $standart->control_method??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    <label for="">Nazorat qilish usullari rasm</label>
+    <label for="">Nazorat usullari rasm</label>
     {{Form::file('photo_control_method', ['class' => 'form-control'])}}
 </div>
 

@@ -11,7 +11,7 @@
                 </div>
             @endif
             <div class="form-group col-md-12">
-                {{Form::open(['route' => ['standarts.store'], 'method' => 'post'])}}
+                {{Form::open(['route' => ['standarts.store'], 'method' => 'post','files'=>true])}}
                 @csrf
                 @include('admin.standarts._form')
                 <div class="form-group">

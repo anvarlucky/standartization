@@ -9,21 +9,21 @@ use Illuminate\Support\Facades\Storage;
 
 class Standart extends Model
 {
-    use HasFactory;
     use SoftDeletes;
     protected $guarded = [];
-    public const STORAGE_URL_SCOPE = 'public/scope';
-    public const STORAGE_URL_NORMATIVE = 'public/standart/photo_normative_references';
-    public const STORAGE_URL_CLASSIFICATONS = 'public/standart/photo_classifications';
-    public const STORAGE_URL_TECHNICAL = 'public/standart/photo_technical_requirement';
-    public const STORAGE_URL_SAFETY = 'public/standart/photo_safety_requirement';
-    public const STORAGE_URL_RULES = 'public/standart/photo_acceptance_rules';
-    public const STORAGE_URL_CONTROL = 'public/standart/photo_control_method';
-    public const STORAGE_URL_APPENDIX = 'public/standart/photo_appendix_a_reference';
-    public const STORAGE_URL_BIBLIOGRAPHY = 'public/standart/photo_bibliography';
-    public const STORAGE_URL_BIBLIOGRAPHY_DATA = 'public/standart/photo_bibliography_data';
-    public const STORAGE_URL_DOC = 'public/docstandart';
-    public const STORAGE_URL_PDF = 'public/pdfstandart';
+
+    const STORAGE_URL_SCOPE = '/public/scope';
+    /*const STORAGE_URL_NORMATIVE = 'public/standart/photo_normative_references';
+    const STORAGE_URL_CLASSIFICATONS = 'public/standart/photo_classifications';
+    const STORAGE_URL_TECHNICAL = 'public/standart/photo_technical_requirement';
+    const STORAGE_URL_SAFETY = 'public/standart/photo_safety_requirement';
+    const STORAGE_URL_RULES = 'public/standart/photo_acceptance_rules';
+    const STORAGE_URL_CONTROL = 'public/standart/photo_control_method';
+    const STORAGE_URL_APPENDIX = 'public/standart/photo_appendix_a_reference';
+    const STORAGE_URL_BIBLIOGRAPHY = 'public/standart/photo_bibliography';
+    const STORAGE_URL_BIBLIOGRAPHY_DATA = 'public/standart/photo_bibliography_data';*/
+    const STORAGE_URL_DOC = '/public/docstandart';
+    const STORAGE_URL_PDF = '/public/pdfstandart';
 
     public static function uploadPhotoScope($uploadFile){
         $filename = time().$uploadFile->getClientOriginalName();
@@ -35,7 +35,7 @@ class Standart extends Model
         return $filename;
     }
 
-    public static function uploadPhotoNormative($uploadFile){
+    /*public static function uploadPhotoNormative($uploadFile){
         $filename = time().$uploadFile->getClientOriginalName();
         Storage::disk('local')->putFileAs(
             self::STORAGE_URL_NORMATIVE,
@@ -123,7 +123,7 @@ class Standart extends Model
             $filename
         );
         return $filename;
-    }
+    }*/
     public static function uploadDoc($uploadFile){
         $filename = time().$uploadFile->getClientOriginalName();
         Storage::disk('local')->putFileAs(
