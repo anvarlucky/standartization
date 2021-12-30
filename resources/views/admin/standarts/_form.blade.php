@@ -46,7 +46,7 @@
 
 <div class="form-group">
     <label for=""><b>1.Qo`llash sohasi</b></label>
-    {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control'])}}
+    {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control','id'=>"summary-ckeditor"])}}
 </div>
 <div class="form-group">
     <label for="">Qo`llash sohasi rasm</label>
@@ -54,16 +54,15 @@
 </div>
 <div class="form-group">
     <label for=""><b>2.Meyoriy havolalar</b></label>
-    {{Form::textarea('normative_references', $standart->normative_references??null, ['class' => 'form-control'])}}
+    {{Form::textarea('normative_references', $standart->normative_references??null, ['class' => 'form-control','id' => 'summary2-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Meyoriy havolalar rasm</label>
     {{Form::file('photo_normative_references', ['class' => 'form-control'])}}
 </div>
-
 <div class="form-group">
     <label for=""><b>3.Tasniflar va shartli belgilar</b></label>
-    {{Form::textarea('classifications', $standart->classifications??null, ['class' => 'form-control'])}}
+    {{Form::textarea('classifications', $standart->classifications??null, ['class' => 'form-control','id' => 'summary3-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Tasniflar va shartli belgilar rasm</label>
@@ -72,7 +71,7 @@
 
 <div class="form-group">
     <label for=""><b>4.Texnik talablar</b></label>
-    {{Form::textarea('technical_requirement', $standart->technical_requirement??null, ['class' => 'form-control'])}}
+    {{Form::textarea('technical_requirement', $standart->technical_requirement??null, ['class' => 'form-control','id' => 'summary4-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Texnik talablar rasm</label>
@@ -81,7 +80,7 @@
 
 <div class="form-group">
     <label for=""><b>5.Havfsizlik va atrof muhitni muhofaza qilish talablari</b></label>
-    {{Form::textarea('safety_requirement', $standart->safety_requirement??null, ['class' => 'form-control'])}}
+    {{Form::textarea('safety_requirement', $standart->safety_requirement??null, ['class' => 'form-control','id' => 'summary5-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Havfsizlik va atrof muhitni muhofaza qilish talablari rasm</label>
@@ -90,7 +89,7 @@
 
 <div class="form-group">
     <label for=""><b>6.Qabul qilish qoidalari </b></label>
-    {{Form::textarea('acceptance_rule', $standart->acceptance_rule??null, ['class' => 'form-control'])}}
+    {{Form::textarea('acceptance_rule', $standart->acceptance_rule??null, ['class' => 'form-control','id' => 'summary6-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Qabul qilish qoidalari rasm</label>
@@ -99,7 +98,7 @@
 
 <div class="form-group">
     <label for=""><b>7.Nazorat usullari</b></label>
-    {{Form::textarea('control_method', $standart->control_method??null, ['class' => 'form-control'])}}
+    {{Form::textarea('control_method', $standart->control_method??null, ['class' => 'form-control','id' => 'summary7-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Nazorat usullari rasm</label>
@@ -108,7 +107,7 @@
 
 <div class="form-group">
     <label for=""><b>Ilova A</b></label>
-    {{Form::textarea('appendix_a_reference', $standart->appendix_a_reference??null, ['class' => 'form-control'])}}
+    {{Form::textarea('appendix_a_reference', $standart->appendix_a_reference??null, ['class' => 'form-control','id' => 'summary8-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Ilova A rasm</label>
@@ -117,7 +116,7 @@
 
 <div class="form-group">
     <label for=""><b>Bibliografiya</b></label>
-    {{Form::textarea('bibliography', $standart->bibliography??null, ['class' => 'form-control'])}}
+    {{Form::textarea('bibliography', $standart->bibliography??null, ['class' => 'form-control','id' => 'summary9-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Bibliografiya rasm</label>
@@ -126,7 +125,7 @@
 
 <div class="form-group">
     <label for=""><b>Bibliografik malumotlar</b></label>
-    {{Form::textarea('bibliography_data', $standart->bibliography_data??null, ['class' => 'form-control'])}}
+    {{Form::textarea('bibliography_data', $standart->bibliography_data??null, ['class' => 'form-control','id' => 'summary10-ckeditor'])}}
 </div>
 <div class="form-group">
     <label for="">Bibliografik malumotlar rasm</label>
@@ -141,3 +140,16 @@
     <label for="">Standart Document PDF</label>
     {{Form::file('pdf_standart', ['class' => 'form-control'])}}
 </div>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+    CKEDITOR.replace( 'summary2-ckeditor' );
+    CKEDITOR.replace( 'summary3-ckeditor' );
+    CKEDITOR.replace( 'summary4-ckeditor' );
+    CKEDITOR.replace( 'summary5-ckeditor' );
+    CKEDITOR.replace( 'summary6-ckeditor' );
+    CKEDITOR.replace( 'summary7-ckeditor' );
+    CKEDITOR.replace( 'summary8-ckeditor' );
+    CKEDITOR.replace( 'summary9-ckeditor' );
+    CKEDITOR.replace( 'summary10-ckeditor' );
+</script>

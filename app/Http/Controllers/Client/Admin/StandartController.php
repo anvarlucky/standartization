@@ -137,6 +137,7 @@ class StandartController extends Controller
         $standart->pages = $request['pages'];
         $standart->which_instead_standart = $request['which_instead_standart'];
         $standart->scope = $request['scope'];
+        $standart->normative_references = $request['normative_references'];
         $standart = $standart->save();
         if ($standart == true) {
             return redirect()->route('standarts.index');
