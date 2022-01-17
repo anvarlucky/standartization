@@ -53,6 +53,99 @@ class StandartController extends Controller
         else{
             $fileName = null;
         }
+
+        //
+        if($request->hasFile('photo_normative_references') == true) {
+            $uploadFile = $request->file('photo_normative_references');
+            $fileName = Standart::uploadPhotoNormative($uploadFile);
+            $requestAll['photo_normative_references'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_classifications') == true) {
+            $uploadFile = $request->file('photo_classifications');
+            $fileName = Standart::uploadPhotoClassifications($uploadFile);
+            $requestAll['photo_classifications'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_technical_requirement') == true) {
+            $uploadFile = $request->file('photo_technical_requirement');
+            $fileName = Standart::uploadPhotoTechnical($uploadFile);
+            $requestAll['photo_technical_requirement'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_safety_requirement') == true) {
+            $uploadFile = $request->file('photo_safety_requirement');
+            $fileName = Standart::uploadPhotoSafety($uploadFile);
+            $requestAll['photo_safety_requirement'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_acceptance_rules') == true) {
+            $uploadFile = $request->file('photo_acceptance_rules');
+            $fileName = Standart::uploadPhotoRules($uploadFile);
+            $requestAll['photo_acceptance_rules'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_control_method') == true) {
+            $uploadFile = $request->file('photo_control_method');
+            $fileName = Standart::uploadPhotoControl($uploadFile);
+            $requestAll['photo_control_method'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_appendix_a_reference') == true) {
+            $uploadFile = $request->file('photo_appendix_a_reference');
+            $fileName = Standart::uploadPhotoAppendix($uploadFile);
+            $requestAll['photo_appendix_a_reference'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_bibliography') == true) {
+            $uploadFile = $request->file('photo_bibliography');
+            $fileName = Standart::uploadPhotoBibliography($uploadFile);
+            $requestAll['photo_bibliography'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+
+        if($request->hasFile('photo_bibliography_data') == true) {
+            $uploadFile = $request->file('photo_bibliography_data');
+            $fileName = Standart::uploadPhotoBibliographyData($uploadFile);
+            $requestAll['photo_bibliography_data'] = $fileName;
+        }
+
+        else{
+            $fileName = null;
+        }
+        //
+
         if($request->hasFile('doc_standart') == true)
         {
             $uploadFile = $request->file('doc_standart');
@@ -138,6 +231,14 @@ class StandartController extends Controller
         $standart->which_instead_standart = $request['which_instead_standart'];
         $standart->scope = $request['scope'];
         $standart->normative_references = $request['normative_references'];
+        $standart->classifications = $request['classifications'];
+        $standart->technical_requirement = $request['technical_requirement'];
+        $standart->safety_requirement = $request['safety_requirement'];
+        $standart->acceptance_rule = $request['acceptance_rule'];
+        $standart->control_method = $request['control_method'];
+        $standart->appendix_a_reference = $request['appendix_a_reference'];
+        $standart->bibliography = $request['bibliography'];
+        $standart->bibliography_data = $request['bibliography_data'];
         $standart = $standart->save();
         if ($standart == true) {
             return redirect()->route('standarts.index');

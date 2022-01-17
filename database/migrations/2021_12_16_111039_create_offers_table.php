@@ -15,7 +15,10 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
+            $table->text('text');
+            $table->string('phone_number');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
