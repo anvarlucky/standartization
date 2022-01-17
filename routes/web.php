@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Client\Main\StandartClientController;
+use App\Http\Controllers\Client\Main\ContactClientController;
 
 use App\Http\Controllers\Client\Admin\PageController;
 use App\Http\Controllers\Client\Admin\CategoryController;
@@ -14,7 +15,10 @@ use App\Http\Controllers\Client\Admin\StandartController;
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/',[StandartClientController::class,'index']);
-Route::get('standart/{id}',[StandartClientController::class,'show']);
+Route::get('standart/{id}',[StandartClientController::class,'show'])->name('standart1');
+Route::get('contacts',[ContactClientController::class,'index']);
+Route::get('docclient/{id}',[StandartClientController::class,'doc'])->name('docclient');
+Route::get('pdfclient/{id}',[StandartClientController::class,'pdf'])->name('pdfclient');
 //Auth ui
 Auth::routes(['register' => false]);
 Route::get('logout', [LoginController::class, 'logout']);

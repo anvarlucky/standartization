@@ -19,9 +19,9 @@
 
 <div class="container">
     <div class="d-flex align-items-center text-start mt-4">
-        <button class="btn bg-392D7D rounded-0 focus-none text-white me-3">
+        <a href="#list" class="btn bg-392D7D rounded-0 focus-none text-white me-3">
             <i class="fal fa-list-ul"></i>
-        </button>
+        </a>
 
         <button class="btn bg-392D7D active focus-none rounded-0 text-white me-3">
             <img src="{{'/assets/images/view.svg'}}" width="18" alt="view">
@@ -53,11 +53,11 @@
         @foreach($standarts as $standart)
         <div class="col-md-6 mt-4">
             <div class="item-half">
-                <a href="" class="item-half_title">
+                <a href="{{route('standart1',$standart->id)}}" class="item-half_title">
                     {{$standart->title}}
                 </a>
                 <p class="item-half_text">
-                    {{$standart->description}}
+                    {!!  $standart->description!!}
                 </p>
             </div>
         </div>

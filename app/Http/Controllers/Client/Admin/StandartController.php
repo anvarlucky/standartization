@@ -219,6 +219,7 @@ class StandartController extends Controller
         $request = $request->except('_token');
         $standart = Standart::select('*')->where('id', $id)->first();
         $standart->title = $request['title'];
+        $standart->description = $request['description'];
         $standart->doc_type_id = $request['doc_type_id'];
         $standart->developed_organization = $request['developed_organization'];
         $standart->organization = $request['organization'];

@@ -18,4 +18,14 @@ class StandartClientController extends Controller
         $standart = Standart::select('*')->where('id',$id)->first();
         return view('main.standarts.show',['standart' => $standart]);
     }
+    public function doc($id)
+    {
+        $standart = Standart::select('id','doc_standart')->where('id', $id)->first();
+        return response()->download(public_path('storage/docstandart/'.$standart->doc_standart));
+    }
+    public function pdf($id)
+    {
+        $standart = Standart::select('id','pdf_standart')->where('id', $id)->first();
+        return response()->download(public_path('storage/pdfstandart/'.$standart->pdf_standart));
+    }
 }

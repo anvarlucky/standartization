@@ -187,50 +187,61 @@
                         Ishlab chiqgan tashkilot:
                     </p>
                     <p>
-                        Qurilishda standartlashtirish respublika
-                        markazi
+                        {{$standart->developed_organization}}
                     </p>
                     <p class="fw-500 mb-0">
                         Kiritgan tashkilot:
                     </p>
                     <p>
-                        Standartlashtirish bo’yicha texnik qo’mita
+                        {{$standart->organization}}
                     </p>
                     <p class="fw-500 mb-0">
                         Tasdiqlangan:
                     </p>
                     <p>
-                        O’zbekiston respublikasi qurilish vazirligi buyrug’i 11.11.2021 - 125/5
+                        {{$standart->approved}}
                     </p>
                     <p class="fw-500 mb-0">
                         Kuchga kirishi:
                     </p>
                     <p>
-                        “O‘zStandart” agentligi qarori
-                        11.11.2021 - 125/5
+                        {{$standart->entry_into_force}}
                     </p>
                     <p class="fw-500">
                         Oldingi tahrirlar:
                     </p>
+                    <p>
+                        {{$standart->previous_edit}}
+                    </p>
                     <p class="fw-500">
                         Holati:
+                    </p>
+                    <p>
+                        {{$standart->status}}
                     </p>
                     <p class="fw-500">
                         Xorijiy analoglar:
                     </p>
+                    <p>
+                        {{$standart->foreign_analogs}}
+                    </p>
                     <p class="fw-500">
                         Sahifalar soni:
+                    </p>
+                    <p>
+                        {{$standart->pages}}
                     </p>
                     <p class="fw-500">
                         Qaysi standart o’rniga:
                         <span class="fw-normal">
-                O‘z DSt 676:96
+                {{$standart->which_instead_standart}}
               </span>
                     </p>
 
                     <div class="d-flex mt-4 mb-3">
-                        <img src="{{asset('/assets/images/word.svg')}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="mx-2" alt="word">
-                        <img src="{{asset('/assets/images/pdf.svg')}}" class="mx-2" alt="word">
+                        {{--<img src="{{asset('/assets/images/word.svg')}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="mx-2" alt="word">--}}
+                        <a href="{{route('docclient',$standart->id)}}"><img src="{{asset('/assets/images/word.svg')}}" class="mx-2" alt="word"></a>
+                        <a href="{{route('pdfclient',$standart->id)}}"><img src="{{asset('/assets/images/pdf.svg')}}" class="mx-2" alt="word"></a>
                     </div>
                 </div>
 

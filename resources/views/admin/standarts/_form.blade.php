@@ -6,7 +6,10 @@
     <label for="">Standart nomi</label>
     {{Form::text('title', $standart->title??null, ['class' => 'form-control'])}}
 </div>
-
+<div class="form-group">
+    <label for="">Standart qisqacha mazmuni</label>
+    {{Form::textarea('description', $standart->description??null, ['class' => 'form-control','id'=>"summary-ckeditor"])}}
+</div>
 <div class="form-group">
     <label for="">Ishlab chiqqan tashkilot nomi</label>
     {{Form::text('developed_organization', $standart->developed_organization??null, ['class' => 'form-control'])}}
@@ -49,7 +52,11 @@
     {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control','id'=>"summary-ckeditor"])}}
 </div>
 <div class="form-group">
+
+    <label for="">Qo`llanilish hududi rasm</label>
+
     <label for="">Qo`llash sohasi rasm</label>
+
     {{Form::file('photo_scope', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
@@ -57,7 +64,11 @@
     {{Form::textarea('normative_references', $standart->normative_references??null, ['class' => 'form-control','id' => 'summary2-ckeditor'])}}
 </div>
 <div class="form-group">
+
+    <label for="">Normativ havolalar rasm</label>
+
     <label for="">Meyoriy havolalar rasm</label>
+
     {{Form::file('photo_normative_references', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
@@ -65,7 +76,11 @@
     {{Form::textarea('classifications', $standart->classifications??null, ['class' => 'form-control','id' => 'summary3-ckeditor'])}}
 </div>
 <div class="form-group">
+
+    <label for="">Klassifikatsiya rasm</label>
+
     <label for="">Tasniflar va shartli belgilar rasm</label>
+
     {{Form::file('photo_classifications', ['class' => 'form-control'])}}
 </div>
 
@@ -74,7 +89,11 @@
     {{Form::textarea('technical_requirement', $standart->technical_requirement??null, ['class' => 'form-control','id' => 'summary4-ckeditor'])}}
 </div>
 <div class="form-group">
+
+    <label for="">Texnik talab rasm</label>
+
     <label for="">Texnik talablar rasm</label>
+
     {{Form::file('photo_technical_requirement', ['class' => 'form-control'])}}
 </div>
 
@@ -83,7 +102,11 @@
     {{Form::textarea('safety_requirement', $standart->safety_requirement??null, ['class' => 'form-control','id' => 'summary5-ckeditor'])}}
 </div>
 <div class="form-group">
+
+    <label for="">Havfsizlik talabi rasm</label>
+
     <label for="">Havfsizlik va atrof muhitni muhofaza qilish talablari rasm</label>
+
     {{Form::file('photo_safety_requirement', ['class' => 'form-control'])}}
 </div>
 
@@ -101,7 +124,11 @@
     {{Form::textarea('control_method', $standart->control_method??null, ['class' => 'form-control','id' => 'summary7-ckeditor'])}}
 </div>
 <div class="form-group">
+
+    <label for="">Nazorat qilish usullari rasm</label>
+
     <label for="">Nazorat usullari rasm</label>
+
     {{Form::file('photo_control_method', ['class' => 'form-control'])}}
 </div>
 

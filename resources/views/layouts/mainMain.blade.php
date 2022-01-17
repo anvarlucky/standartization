@@ -34,7 +34,7 @@
                         <a class="nav-link px-md-0 py-md-1 mx-md-2" href="#">Markaz saytI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-md-0 py-md-1 mx-md-2" href="#">aloqa</a>
+                        <a class="nav-link px-md-0 py-md-1 mx-md-2" href="/contacts">aloqa</a>
                     </li>
 
                     <li class="nav-item d-flex my-md-0 my-2">
