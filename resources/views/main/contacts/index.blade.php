@@ -37,25 +37,23 @@
                     </p>
                 </div>
 
-                <form class="contact-form">
+                    {{Form::open(['route' => ['contacts.store'], 'method' => 'post', 'class' => 'contact-form'])}}
                     <div class="d-flex">
-                        <input type="text" class="form-control placeholder-grey rounded-0 border-0 px-4 py-3 me-3 shadow-blue" placeholder="Ism">
-                        <input type="text" class="form-control placeholder-grey rounded-0 border-0 px-4 py-3 ms-3 shadow-blue" placeholder="Telefon">
+                        {{Form::text('full_name', $contact->full_name??null, ['class' => 'form-control placeholder-grey rounded-0 border-0 px-4 py-3 me-3 shadow-blue','placeholder' => 'F.I.O'])}}
+                        {{Form::text('phone_number', $contact->phone_number??null, ['class' => 'form-control placeholder-grey rounded-0 border-0 px-4 py-3 ms-3 shadow-blue','placeholder' => 'Telefon raqam'])}}
                     </div>
                     <div class="mt-4">
-                        <input type="text" class="form-control placeholder-grey rounded-0 border-0 px-4 py-3 me-3 shadow-blue" placeholder="Elektron pochta*">
+                        {{Form::text('e_mail', $contact->e_mail??null, ['class' => 'form-control placeholder-grey rounded-0 border-0 px-4 py-3 me-3 shadow-blue','placeholder' => 'Elektron pochta*'])}}
                     </div>
 
                     <div class="mt-4">
-            <textarea placeholder="Xabar*" class="form-control placeholder-grey rounded-0 border-0 px-4 py-3 me-3 shadow-blue resize-none" cols="30" rows="10">
-
-                        </textarea>
+                    {{Form::textarea('text', $contact->text??null, ['class' => 'form-control placeholder-grey rounded-0 border-0 px-4 py-3 me-3 shadow-blue resize-none','cols'=>"30", 'rows'=>"10"])}}
                     </div>
-
                     <div class="mt-4 text-center">
-                        <button type="button" class="btn submit-btn focus-none">Yuborish</button>
+                        {{Form::submit(('Yuborish'), ['class' => 'btn submit-btn focus-none'])}}
                     </div>
-                </form>
+                    {{Form::close()}}
+
 
             </div>
             <div class="col-md-9 mt-4">

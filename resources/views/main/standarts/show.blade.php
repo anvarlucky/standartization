@@ -36,7 +36,7 @@
                     </p>
                         @if($standart->photo_scope)
                     <div class="d-flex justify-content-center my-4">
-                        <img src="/storage/scope/{{$standart->photo_scope}}" class="me-4" alt="placeholder">
+                        <img src="/storage/scope/{{$standart->photo_scope}}" class="me-4" alt="placeholder" height="500px" width="600px">
                     </div>
                         @endif
                 </div>
@@ -51,7 +51,7 @@
                     </p>
                         @if($standart->photo_normative_references)
                     <div class="d-flex justify-content-center my-4">
-                        <img src="/storage/standart/photo_normative_references/{{$standart->photo_normative_references}}" class="me-4" alt="placeholder">
+                        <img src="/storage/standart/photo_normative_references/{{$standart->photo_normative_references}}" class="me-4" alt="placeholder" height="500px" width="600px">
                     </div>
                         @endif
                 </div>
@@ -66,7 +66,7 @@
                     </p>
                     @if($standart->photo_classifications)
                     <div class="d-flex justify-content-center my-4">
-                        <img src="/storage/standart/photo_classifications/{{$standart->photo_classifications}}" class="me-4" alt="placeholder">
+                        <img src="/storage/standart/photo_classifications/{{$standart->photo_classifications}}" class="me-4" alt="placeholder" height="500px" width="600px">
                     </div>
                     @endif
                 </div>
@@ -79,10 +79,11 @@
                     <p class="details-body_text">
                         {!! $standart->technical_requirement !!}
                     </p>
-
+                    @if($standart->photo_technical_requirement)
                     <div class="d-flex justify-content-center my-4">
-                        <img src="/storage/standart/photo_technical_requirement/{{$standart->photo_technical_requirement}}" class="me-4" alt="placeholder">
+                        <img src="/storage/standart/photo_technical_requirement/{{$standart->photo_technical_requirement}}" class="me-4" alt="placeholder" height="500px" width="600px">
                     </div>
+                    @endif
                 </div>
             </details>
             <details class="details">
@@ -95,7 +96,7 @@
                     </p>
                         @if($standart->photo_safety_requirement)
                     <div class="d-flex justify-content-center my-4">
-                        <img src="/storage/standart/photo_safety_requirement/{{$standart->photo_safety_requirement}}" class="me-4" alt="placeholder">
+                        <img src="/storage/standart/photo_safety_requirement/{{$standart->photo_safety_requirement}}" class="me-4" alt="placeholder" height="500px" width="600px">
                     </div>
                         @endif
                 </div>
@@ -110,7 +111,7 @@
                     </p>
                         @if($standart->photo_acceptance_rule)
                     <div class="d-flex justify-content-center my-4">
-                        <img src="/storage/standart/photo_acceptance_rule/{{$standart->photo_acceptance_rule}}" class="me-4" alt="placeholder">
+                        <img src="/storage/standart/photo_acceptance_rule/{{$standart->photo_acceptance_rule}}" class="me-4" alt="placeholder" height="500px" width="600px">
                     </div>
                         @endif
                 </div>
@@ -126,7 +127,7 @@
 
                     @if($standart->photo_control_method)
                         <div class="d-flex justify-content-center my-4">
-                            <img src="/storage/standart/photo_control_method/{{$standart->photo_control_method}}" class="me-4" alt="placeholder">
+                            <img src="/storage/standart/photo_control_method/{{$standart->photo_control_method}}" class="me-4" alt="placeholder" height="500px" width="600px">
                         </div>
                     @endif
                 </div>
@@ -142,7 +143,7 @@
 
                     @if($standart->photo_appendix_a_reference)
                         <div class="d-flex justify-content-center my-4">
-                            <img src="/storage/standart/photo_appendix_a_reference/{{$standart->photo_appendix_a_reference}}" class="me-4" alt="placeholder">
+                            <img src="/storage/standart/photo_appendix_a_reference/{{$standart->photo_appendix_a_reference}}" class="me-4" alt="placeholder" height="500px" width="600px">
                         </div>
                     @endif
                 </div>
@@ -158,7 +159,7 @@
 
                     @if($standart->photo_bibliography)
                         <div class="d-flex justify-content-center my-4">
-                            <img src="/storage/standart/photo_bibliography/{{$standart->photo_bibliography}}" class="me-4" alt="placeholder">
+                            <img src="/storage/standart/photo_bibliography/{{$standart->photo_bibliography}}" class="me-4" alt="placeholder" height="500px" width="600px">
                         </div>
                     @endif
                 </div>
@@ -174,7 +175,7 @@
 
                     @if($standart->photo_bibliography_data)
                         <div class="d-flex justify-content-center my-4">
-                            <img src="/storage/standart/photo_bibliography_data/{{$standart->photo_bibliography_data}}" class="me-4" alt="placeholder">
+                            <img src="/storage/standart/photo_bibliography_data/{{$standart->photo_bibliography_data}}" class="me-4" alt="placeholder" height="500px" width="600px">
                         </div>
                     @endif
                 </div>

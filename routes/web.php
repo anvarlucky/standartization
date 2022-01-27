@@ -11,12 +11,13 @@ use App\Http\Controllers\Client\Admin\ClassificationController;
 use App\Http\Controllers\Client\Admin\DocTypeController;
 use App\Http\Controllers\Client\Admin\ForeignAnalogController;
 use App\Http\Controllers\Client\Admin\StandartController;
+use App\Http\Controllers\Client\Admin\ContactController;
 
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/',[StandartClientController::class,'index']);
 Route::get('standart/{id}',[StandartClientController::class,'show'])->name('standart1');
-Route::get('contacts',[ContactClientController::class,'index']);
+Route::resource('contacts',ContactClientController::class);
 Route::get('docclient/{id}',[StandartClientController::class,'doc'])->name('docclient');
 Route::get('pdfclient/{id}',[StandartClientController::class,'pdf'])->name('pdfclient');
 //Auth ui
@@ -33,7 +34,7 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'admin'],function(){
     Route::resource('doctypes',DocTypeController::class);
     Route::resource('foreign_analogs',ForeignAnalogController::class);
     Route::resource('standarts',StandartController::class);
-    Route::resource('standarts',StandartController::class);
+    Route::resource('contacts1',ContactController::class);
     Route::get('doc/{id}',[StandartController::class,'doc'])->name('doc');
     Route::get('pdf/{id}',[StandartController::class,'pdf'])->name('pdf');
 

@@ -15,6 +15,8 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('standart_id')->nullable();
+            $table->foreign('standart_id')->references('id')->on('standarts')->onDelete('cascade');
             $table->text('text');
             $table->string('phone_number');
             $table->timestamps();

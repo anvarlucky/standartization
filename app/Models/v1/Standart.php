@@ -25,6 +25,7 @@ class Standart extends Model
     const STORAGE_URL_DOC = '/public/docstandart';
     const STORAGE_URL_PDF = '/public/pdfstandart';
 
+    //UPLOADS
     public static function uploadPhotoScope($uploadFile){
         $filename = time().$uploadFile->getClientOriginalName();
         Storage::disk('local')->putFileAs(
@@ -143,8 +144,21 @@ class Standart extends Model
         return $filename;
     }
 
+    //RELATIONSHIP
     public function doc_type(){
         return $this->belongsTo('App\Models\v1\DocType');
+    }
+
+    //SEARCH
+    public static function search($search)
+    {
+        $standart = Standart::select('*')
+            ->where('title', 'like', '%'.$search.'%')
+            ->orWhere('description', 'like', '%'.$search.'%')
+            ->orWhere('doc_type_id', 'like', '%'.$search.'%')
+            ->orWhere('standart_number', 'like', '%'.$search.'%')
+            ->get();
+        return $standart;
     }
 
 }

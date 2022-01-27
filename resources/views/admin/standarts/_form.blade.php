@@ -49,7 +49,7 @@
 
 <div class="form-group">
     <label for=""><b>1.Qo`llash sohasi</b></label>
-    {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control','id'=>"summary-ckeditor"])}}
+    {{Form::textarea('scope', $standart->scope??null, ['class' => 'form-control','id'=>"summary1-ckeditor"])}}
 </div>
 <div class="form-group">
 
@@ -170,6 +170,7 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace( 'summary-ckeditor' );
+    CKEDITOR.replace( 'summary1-ckeditor' );
     CKEDITOR.replace( 'summary2-ckeditor' );
     CKEDITOR.replace( 'summary3-ckeditor' );
     CKEDITOR.replace( 'summary4-ckeditor' );
