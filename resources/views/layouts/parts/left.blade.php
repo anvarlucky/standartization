@@ -21,7 +21,7 @@
         <a href="{{route('contacts1.index')}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
             <p class="nav-panel-text">Savol va takliflar</p>
         </a>
-        <a href="{{--route('users.index')--}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
+        <a href="{{route('users.index')}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
             <p class="nav-panel-text">Foydalanuvchilar</p>
         </a>
     </ul>

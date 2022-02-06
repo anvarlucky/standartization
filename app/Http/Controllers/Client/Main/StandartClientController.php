@@ -14,6 +14,15 @@ class StandartClientController extends Controller
         return view('main.standarts.index',['standarts' => $standarts]);
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->post('search');
+        $standart = Standart::search($search);
+        return view('main.standarts.index', [
+            'standarts' => $standart
+        ]);
+    }
+
     public function  show($id){
         $standart = Standart::select('*')->where('id',$id)->first();
         return view('main.standarts.show',['standart' => $standart]);

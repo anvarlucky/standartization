@@ -6,7 +6,9 @@
     </p>
 
     <div class="filter">
-        <input type="text" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Qidiruv...">
+        <form action="{{route('standart.search')}}" method="post">
+            @csrf
+        <input type="text" name="search" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Qidiruv...">
 
         <div class="text-end mt-4">
             <button class="btn bg-transparent long-search">
@@ -14,6 +16,7 @@
             </button>
             <button class="btn submit-btn">IZLASH</button>
         </div>
+        </form>
     </div>
 </div>
 

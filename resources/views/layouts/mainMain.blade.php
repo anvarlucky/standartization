@@ -31,7 +31,7 @@
                         <a class="nav-link px-md-0 py-md-1 mx-md-2 active" aria-current="page" href="/">BOSH sahifa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-md-0 py-md-1 mx-md-2" href="#">Markaz saytI</a>
+                        <a class="nav-link px-md-0 py-md-1 mx-md-2" href="http://rcsc.sarvarazim.com/">Markaz saytI</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-md-0 py-md-1 mx-md-2" href="/contacts">aloqa</a>

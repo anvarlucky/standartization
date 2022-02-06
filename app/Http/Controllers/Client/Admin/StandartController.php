@@ -19,6 +19,7 @@ class StandartController extends Controller
         return view($this->standart . '.index', ['standarts' => $standarts]);
     }
 
+
     public function show($id){
         $standart = Standart::where('id',$id)->first();
         return view($this->standart.'.show', ['standart' => $standart]);
