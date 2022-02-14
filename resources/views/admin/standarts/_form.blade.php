@@ -7,6 +7,10 @@
     {{Form::text('title', $standart->title??null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
+    <label for="">Standart raqami</label>
+    {{Form::text('standart_number', $standart->standart_number??null, ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
     <label for="">Standart qisqacha mazmuni</label>
     {{Form::textarea('description', $standart->description??null, ['class' => 'form-control','id'=>"summary-ckeditor"])}}
 </div>

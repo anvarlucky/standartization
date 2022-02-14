@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Client\Main\StandartClientController;
 use App\Http\Controllers\Client\Main\ContactClientController;
+use App\Http\Controllers\Client\Main\OfferClientController;
 
 use App\Http\Controllers\Client\Admin\PageController;
 use App\Http\Controllers\Client\Admin\CategoryController;
@@ -13,12 +14,15 @@ use App\Http\Controllers\Client\Admin\ForeignAnalogController;
 use App\Http\Controllers\Client\Admin\StandartController;
 use App\Http\Controllers\Client\Admin\ContactController;
 use \App\Http\Controllers\Client\Admin\UserController;
+use \App\Http\Controllers\Client\Admin\OfferController;
+use \App\Http\Controllers\Client\Admin\RoleController;
 
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/',[StandartClientController::class,'index']);
 Route::get('standart/{id}',[StandartClientController::class,'show'])->name('standart1');
 Route::post('standarts',[StandartClientController::class,'search'])->name('standart.search');
+Route::post('offers',[OfferClientController::class,'store'])->name('offers.store');
 Route::resource('contacts',ContactClientController::class);
 Route::get('docclient/{id}',[StandartClientController::class,'doc'])->name('docclient');
 Route::get('pdfclient/{id}',[StandartClientController::class,'pdf'])->name('pdfclient');
@@ -38,6 +42,8 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'admin'],function(){
     Route::resource('standarts',StandartController::class);
     Route::resource('contacts1',ContactController::class);
     Route::resource('users',UserController::class);
+    Route::resource('roles',RoleController::class);
+    Route::resource('offers1',OfferController::class);
     Route::get('doc/{id}',[StandartController::class,'doc'])->name('doc');
     Route::get('pdf/{id}',[StandartController::class,'pdf'])->name('pdf');
 

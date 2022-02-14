@@ -19,10 +19,16 @@
             <p class="nav-panel-text">Standartlar</p>
         </a>
         <a href="{{route('contacts1.index')}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
-            <p class="nav-panel-text">Savol va takliflar</p>
+            <p class="nav-panel-text">Qo`shimcha mulohazalar(ALOQA)</p>
+        </a>
+        <a href="{{route('offers1.index')}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
+            <p class="nav-panel-text">Takliflar</p>
         </a>
         <a href="{{route('users.index')}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
             <p class="nav-panel-text">Foydalanuvchilar</p>
+        </a>
+        <a href="{{route('roles.index')}}" class="nav-panel-items text-decoration-none d-flex align-items-center px-3 py-3">
+            <p class="nav-panel-text">Rollar</p>
         </a>
     </ul>
 </div>

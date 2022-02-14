@@ -5,18 +5,25 @@ namespace App\Http\Controllers\Client\Main;
 use App\Http\Controllers\Controller;
 use App\Models\v1\Standart;
 use Illuminate\Http\Request;
+use App\Models\v1\Category;
+use App\Models\v1\Classification;
+use App\Models\v1\DocType;
 
 class StandartClientController extends Controller
 {
     public function index()
     {
         $standarts = Standart::all();
-        return view('main.standarts.index',['standarts' => $standarts]);
+        $categories = Category::all();
+        $classifications = Classification::all();
+        $doc_types = DocType::all();
+        return view('main.standarts.index',['standarts' => $standarts,'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types]);
     }
 
     public function search(Request $request)
     {
-        $search = $request->post('search');
+        $search = $request->except('_token');
+        //dd($search);
         $standart = Standart::search($search);
         return view('main.standarts.index', [
             'standarts' => $standart

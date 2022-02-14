@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\v1\Role;
@@ -40,12 +41,12 @@ class UserController extends Controller
 
     public function edit($id){
         $user = User::where('id',$id)->first();
-        dd(md5($user->password));
+        //dd($user);
         $roles = Role::all();
         return view($this->user.'.edit',['user' => $user,'roles' => $roles]);
     }
 
-    public function update($id,Request $request){
+    public function update($id,UserUpdateRequest $request){
         $user = User::where('id',$id)->first();
         $user->remember_token = $request['_token'];
         $user->role_id = $request['role_id'];

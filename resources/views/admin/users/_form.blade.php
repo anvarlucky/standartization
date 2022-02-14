@@ -14,12 +14,11 @@
     <label for="">Foydalanuvchi E-maili</label>
     {{Form::text('email', $user->email??null, ['class' => 'form-control'])}}
 </div>
-{{--
-@if($user->password != null)
 <div class="form-group">
     <label for="">Foydalanuvchi paroli</label>
-    {{Form::password('password', $user->password??null, ['class' => 'form-control'])}}
+    {{Form::text('password', $user->password??null, ['class' => 'form-control'])}}
 </div>
-@else
-    <span></span>
-@endif--}}
+<div class="form-group">
+    <label for="">Parolni tasdiqlash</label>
+    {{Form::text('password_confirm', $user->password??null, ['class' => 'form-control'])}}
+</div>

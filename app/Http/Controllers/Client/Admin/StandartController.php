@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Client\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\v1\DocType;
-use App\Models\v1\ForeignAnalog;
 use Illuminate\Http\Request;
 use App\Models\v1\Standart;
 use App\Http\Requests\StandartRequest;
@@ -22,6 +21,7 @@ class StandartController extends Controller
 
     public function show($id){
         $standart = Standart::where('id',$id)->first();
+
         return view($this->standart.'.show', ['standart' => $standart]);
     }
     public function doc($id)

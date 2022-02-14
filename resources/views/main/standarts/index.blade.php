@@ -11,7 +11,44 @@
         <input type="text" name="search" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Qidiruv...">
 
         <div class="text-end mt-4">
-            <button class="btn bg-transparent long-search">
+            <div id="demo" class="collapse">
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18">
+                                <option></option>
+                                @foreach($categories as $category)
+                                <option>{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18">
+                                <option></option>
+                                @foreach($classifications as $classification)
+                                <option>{{$classification->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="description" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Kalit so’zni kiriting">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="standart_number" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Standart raqami">
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center justify-content-between mt-3">
+                        <div class="col-md-3">
+                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18" name="doc_type_id">
+                                <option></option>
+                                @foreach($doc_types as $doc_type)
+                                <option value="{{$doc_type->id}}">{{$doc_type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+            </div>
+            <button type="button" class="btn bg-transparent long-search" data-bs-toggle="collapse" data-bs-target="#demo">
                 Kengaytirilgan qidiruv
             </button>
             <button class="btn submit-btn">IZLASH</button>

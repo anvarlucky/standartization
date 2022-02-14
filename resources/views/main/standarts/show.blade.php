@@ -183,7 +183,7 @@
         </div>
         <div class="col-md-4 mt-md-0 mt-4">
             <div class="information">
-                <div class="information-item">
+                <div class="information-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <p class="fw-500 mb-0">
                         Ishlab chiqgan tashkilot:
                     </p>
@@ -234,13 +234,12 @@
                     </p>
                     <p class="fw-500">
                         Qaysi standart o’rniga:
-                        <span class="fw-normal">
+                        <span class="fw-normal" >
                 {{$standart->which_instead_standart}}
               </span>
                     </p>
 
                     <div class="d-flex mt-4 mb-3">
-                        {{--<img src="{{asset('/assets/images/word.svg')}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="mx-2" alt="word">--}}
                         <a href="{{route('docclient',$standart->id)}}"><img src="{{asset('/assets/images/word.svg')}}" class="mx-2" alt="word"></a>
                         <a href="{{route('pdfclient',$standart->id)}}"><img src="{{asset('/assets/images/pdf.svg')}}" class="mx-2" alt="word"></a>
                     </div>
@@ -259,18 +258,6 @@
     </div>
 </div>
 
-<div class="modal fade custom-modal" id="staticBackdrop" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <input type="text" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2 mt-2" placeholder="Taklifni kiriting...">
-                <input type="text" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2 mt-4" placeholder="Siz bilan aloqa uchun e-mail yoki telefon kiriting... ">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn submit-btn focus-none">Yuborish</button>
-            </div>
-        </div>
-    </div>
-</div>
+@include('layouts.parts.modalForm')
 
 @endsection
