@@ -18,8 +18,7 @@
             <a class="navbar-brand header-logo" href="/">
                 <img src="{{asset('/assets/images/logo.svg')}}" class="header-logo_img" alt="logo">
                 <p class="header-logo_text">
-                    Qurilishda standarlashtirish
-                    Respublika markazi
+                    {{__('contentMain.centre')}}
                 </p>
             </a>
             <button class="navbar-toggler border-0 px-0 focus-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

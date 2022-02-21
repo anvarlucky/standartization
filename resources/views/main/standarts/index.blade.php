@@ -8,21 +8,20 @@
     <div class="filter">
         <form action="{{route('standart.search')}}" method="post">
             @csrf
-        <input type="text" name="search" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Qidiruv...">
-
+        <input type="text" name="title" class="form-control placeholder-grey rounded-0 border-0 px-4 py-2" placeholder="Qidiruv...">
         <div class="text-end mt-4">
             <div id="demo" class="collapse">
                     <div class="row mt-3">
                         <div class="col-md-3">
-                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18">
+                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18" name="category_id">
                                 <option></option>
                                 @foreach($categories as $category)
-                                <option>{{ $category->name }}</option>
+                                    <option>{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18">
+                            <select class="form-select rounded-0 border-0 px-4 py-2 fz-18" name="classification_id">
                                 <option></option>
                                 @foreach($classifications as $classification)
                                 <option>{{$classification->name}}</option>

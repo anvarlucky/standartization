@@ -19,6 +19,18 @@ use \App\Http\Controllers\Client\Admin\RoleController;
 
 use App\Http\Controllers\Auth\LoginController;
 
+use Illuminate\Support\Facades\App;
+
+Route::get('/greeting/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'ru', 'uz'])) {
+        abort(400);
+    }
+
+    App::setLocale($locale);
+
+    'sdsdsd';
+});
+
 Route::get('/',[StandartClientController::class,'index']);
 Route::get('standart/{id}',[StandartClientController::class,'show'])->name('standart1');
 Route::post('standarts',[StandartClientController::class,'search'])->name('standart.search');
