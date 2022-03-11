@@ -46,9 +46,16 @@ class StandartController extends Controller
         $requestAll = $request->except('_token');
         $standart = new Standart;
         if($request->hasFile('photo_scope') == true) {
+
             $uploadFile = $request->file('photo_scope');
-            $fileName = Standart::uploadPhotoScope($uploadFile);
-            $requestAll['photo_scope'] = $fileName;
+            dump($uploadFile);
+            //dd('dsdsd');
+            foreach ($uploadFile as $image){
+            dump($image);
+                $fileName = Standart::uploadPhotoScope($image);
+                $requestAll['photo_scope'] = $fileName;
+            }
+
         }
 
         else{

@@ -174,8 +174,22 @@
                     </p>
 
                     @if($standart->photo_bibliography_data)
+                        <style>
+                            img.me-4 {
+                                border: 1px solid #ddd;
+                                border-radius: 4px;
+                                padding: 5px;
+                                width: 150px;
+                            }
+
+                            img.me-4:hover {
+                                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+                            }
+                        </style>
                         <div class="d-flex justify-content-center my-4">
-                            <img src="/storage/standart/photo_bibliography_data/{{$standart->photo_bibliography_data}}" class="me-4" alt="placeholder" height="500px" width="600px">
+                            <a target="_blank" href="/storage/standart/photo_bibliography_data/{{$standart->photo_bibliography_data}}">
+                                <img src="/storage/standart/photo_bibliography_data/{{$standart->photo_bibliography_data}}" class="me-4" alt="placeholder" height="300px" width="500px">
+                            </a>
                         </div>
                     @endif
                 </div>

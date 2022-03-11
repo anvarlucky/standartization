@@ -18,7 +18,8 @@
             <a class="navbar-brand header-logo" href="/">
                 <img src="{{asset('/assets/images/logo.svg')}}" class="header-logo_img" alt="logo">
                 <p class="header-logo_text">
-                    {{__('contentMain.centre')}}
+                    Qurilishda standarlashtirish
+                    Respublika markazi
                 </p>
             </a>
             <button class="navbar-toggler border-0 px-0 focus-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +31,7 @@
                         <a class="nav-link px-md-0 py-md-1 mx-md-2 active" aria-current="page" href="/">BOSH sahifa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-md-0 py-md-1 mx-md-2" href="http://rcsc.sarvarazim.com/">Markaz saytI</a>
+                        <a class="nav-link px-md-0 py-md-1 mx-md-2" href="https://standart.mc.uz/">Markaz saytI</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-md-0 py-md-1 mx-md-2" href="/contacts">aloqa</a>

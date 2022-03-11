@@ -24,13 +24,16 @@ class StandartClientController extends Controller
     {
         //$search = $request->except('_token');
         $search = [
+            'search' =>
+            [
             'title' => $request['title'],
             'description' => $request['description'],
             'doc_type_id' => $request['doc_type_id'],
             'standart_number' => $request['standart_number']
+        ]
         ];
-        //dd($search);
-        $standart = Standart::search($search);
+        dd($search);
+        $standart = Standart::select('*')->where($search)->get();
         return view('main.standarts.index', [
             'standarts' => $standart
         ]);
