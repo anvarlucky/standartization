@@ -46,7 +46,7 @@ class StandartController extends Controller
         $requestAll = $request->except('_token');
         $standart = new Standart;
         if($request->hasFile('photo_scope') == true) {
-
+        dd($request->images);
             $uploadFile = $request->file('photo_scope');
             dump($uploadFile);
             //dd('dsdsd');

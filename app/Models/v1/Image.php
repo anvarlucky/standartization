@@ -10,5 +10,9 @@ class Image extends Model
 {
     use HasFactory,SoftDeletes;
     protected $guarded = [];
+
+    public function standarts(){
+        return $this->belongsToMany('App\Models\v1\Standart');
+    }
     
 }
