@@ -12,7 +12,8 @@ class Image extends Model
     protected $guarded = [];
 
     public function standarts(){
-        return $this->belongsToMany('App\Models\v1\Standart');
+        //return $this->belongsToMany('App\Models\v1\Standart');
+        //return $this->belongsToMany('App\Models\v1\Standart', 'images','id')->withTimestamps();
     }
     
 }
