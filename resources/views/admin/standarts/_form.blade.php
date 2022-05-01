@@ -90,7 +90,7 @@
 <div class="collapse" id="collapseExample3">
 <div class="form-group">
 <label for="">Meyoriy havolalar rasm</label>
-    {{Form::file('photo_normative_references', ['class' => 'form-control'])}}
+    {{Form::file('photo_normative_references[]',['multiple' => true], ['class' => 'form-control'])}}
 </div>
 </div>
 

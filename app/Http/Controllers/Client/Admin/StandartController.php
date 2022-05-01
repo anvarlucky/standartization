@@ -49,11 +49,12 @@ class StandartController extends Controller
         //dd($requestAll['photo_scope']);
             $uploadFile = $request->file('photo_scope');
             foreach ($uploadFile as $image){
-            dump($image);
+
                 $fileName = Standart::uploadPhotoScope($image);
                 $requestAll['photo_scope'] = $fileName;
+                //dump(count($fileName));
             }
-            dd('yuklandi papkaga bazaga emas');
+            //dd('yuklandi papkaga bazaga emas');
 
         }
 
@@ -64,8 +65,14 @@ class StandartController extends Controller
         //
         if($request->hasFile('photo_normative_references') == true) {
             $uploadFile = $request->file('photo_normative_references');
-            $fileName = Standart::uploadPhotoNormative($uploadFile);
-            $requestAll['photo_normative_references'] = $fileName;
+            /*$fileName = Standart::uploadPhotoNormative($uploadFile);
+            $requestAll['photo_normative_references'] = $fileName;*/
+            foreach ($uploadFile as $image1){
+                //dump(count($image1));
+                $fileName = Standart::uploadPhotoNormative($image1);
+                $requestAll['photo_normative_references'] = $fileName;
+            }
+            dd('yuklandi papkaga bazaga emas');
         }
 
         else{
@@ -171,9 +178,9 @@ class StandartController extends Controller
         else{
             $fileName = null;
         }
-        $standart = Standart::create($requestAll);
-
-        /*$standart->title = $request->title;
+        //$standart = Standart::create($requestAll);
+        dd($standart->scope);
+        $standart->title = $request->title;
         $standart->doc_type_id = $request->doc_type_id;
         $standart->developed_organization = $request->developed_organization;
         $standart->organization = $request->organization;
@@ -206,7 +213,11 @@ class StandartController extends Controller
         $standart->photo_bibliography_data = $request->photo_bibliography_data;
         $standart->doc_standart = $request->doc_standart;
         $standart->pdf_standart = $request->pdf_standart;
-        $standart->save();*/
+        $standart->save();
+
+
+
+
         if ($standart == true) {
             return redirect()->route('standarts.index');
         } else {
