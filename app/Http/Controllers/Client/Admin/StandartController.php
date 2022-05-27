@@ -49,12 +49,11 @@ class StandartController extends Controller
         //dd($requestAll['photo_scope']);
             $uploadFile = $request->file('photo_scope');
             foreach ($uploadFile as $image){
-
                 $fileName = Standart::uploadPhotoScope($image);
                 $requestAll['photo_scope'] = $fileName;
-                //dump(count($fileName));
+                $standart->photo_scope = explode(',',$fileName);
             }
-            //dd('yuklandi papkaga bazaga emas');
+            dump('yuklandi...');
 
         }
 
@@ -72,7 +71,7 @@ class StandartController extends Controller
                 $fileName = Standart::uploadPhotoNormative($image1);
                 $requestAll['photo_normative_references'] = $fileName;
             }
-            dd('yuklandi papkaga bazaga emas');
+            //dd('yuklandi papkaga bazaga emas');
         }
 
         else{
@@ -179,7 +178,6 @@ class StandartController extends Controller
             $fileName = null;
         }
         //$standart = Standart::create($requestAll);
-        dd($standart->scope);
         $standart->title = $request->title;
         $standart->doc_type_id = $request->doc_type_id;
         $standart->developed_organization = $request->developed_organization;
@@ -192,7 +190,7 @@ class StandartController extends Controller
         $standart->pages = $request->pages;
         $standart->which_instead_standart = $request->which_instead_standart;
         $standart->scope = $request->scope;
-        $standart->photo_scope = $request->photo_scope;
+        //$standart->photo_scope = $request->photo_scope;
         $standart->normative_references = $request->normative_references;
         $standart->photo_normative_references = $request->photo_normative_references;
         $standart->classifications = $request->classifications;

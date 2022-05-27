@@ -12,7 +12,7 @@ class Standart extends Model
     use SoftDeletes;
     protected $guarded = [];
 
-    const STORAGE_URL_SCOPE = '/public/scope';
+    const STORAGE_URL_SCOPE = '/public/standart/scope';
     const STORAGE_URL_NORMATIVE = 'public/standart/photo_normative_references';
     const STORAGE_URL_CLASSIFICATONS = 'public/standart/photo_classifications';
     const STORAGE_URL_TECHNICAL = 'public/standart/photo_technical_requirement';
