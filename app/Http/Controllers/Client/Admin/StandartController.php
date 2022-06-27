@@ -47,13 +47,16 @@ class StandartController extends Controller
         $standart = new Standart;
         if($request->hasFile('photo_scope') == true) {
         //dd($requestAll['photo_scope']);
-            $uploadFile = $request->file('photo_scope');
-            foreach ($uploadFile as $image){
+            $uploadFileScope = $request->file('photo_scope');
+            foreach ($uploadFileScope as $image){
                 $fileName = Standart::uploadPhotoScope($image);
                 $requestAll['photo_scope'] = $fileName;
                 $standart->photo_scope = explode(',',$fileName);
+                dump($standart->photo_scope);
             }
             dump('yuklandi...');
+            dump($standart->images);
+            dump(count($uploadFileScope));
 
         }
 
@@ -67,11 +70,11 @@ class StandartController extends Controller
             /*$fileName = Standart::uploadPhotoNormative($uploadFile);
             $requestAll['photo_normative_references'] = $fileName;*/
             foreach ($uploadFile as $image1){
-                //dump(count($image1));
+                dump(count($image1));
                 $fileName = Standart::uploadPhotoNormative($image1);
                 $requestAll['photo_normative_references'] = $fileName;
             }
-            //dd('yuklandi papkaga bazaga emas');
+            dump('yuklandi papkaga bazaga emas');
         }
 
         else{
@@ -178,41 +181,55 @@ class StandartController extends Controller
             $fileName = null;
         }
         //$standart = Standart::create($requestAll);
-        $standart->title = $request->title;
-        $standart->doc_type_id = $request->doc_type_id;
-        $standart->developed_organization = $request->developed_organization;
-        $standart->organization = $request->organization;
-        $standart->approved = $request->approved;
-        $standart->entry_into_force = $request->entry_into_force;
-        $standart->previous_edit = $request->previous_edit;
-        $standart->status = $request->status;
-        $standart->foreign_analogs = $request->foreign_analogs;
-        $standart->pages = $request->pages;
-        $standart->which_instead_standart = $request->which_instead_standart;
-        $standart->scope = $request->scope;
-        //$standart->photo_scope = $request->photo_scope;
-        $standart->normative_references = $request->normative_references;
-        $standart->photo_normative_references = $request->photo_normative_references;
-        $standart->classifications = $request->classifications;
-        $standart->photo_classifications = $request->photo_classifications;
-        $standart->technical_requirement = $request->technical_requirement;
-        $standart->photo_technical_requirement = $request->photo_technical_requirement;
-        $standart->safety_requirement = $request->safety_requirement;
-        $standart->photo_safety_requirement = $request->photo_safety_requirement;
-        $standart->acceptance_rule = $request->acceptance_rule;
-        $standart->photo_acceptance_rules = $request->photo_acceptance_rules;
-        $standart->control_method = $request->control_method;
-        $standart->photo_control_method = $request->photo_control_method;
-        $standart->appendix_a_reference = $request->appendix_a_reference;
-        $standart->photo_appendix_a_reference = $request->photo_appendix_a_reference;
-        $standart->bibliography = $request->bibliography;
-        $standart->photo_bibliography = $request->photo_bibliography;
-        $standart->bibliography_data = $request->bibliography_data;
-        $standart->photo_bibliography_data = $request->photo_bibliography_data;
-        $standart->doc_standart = $request->doc_standart;
-        $standart->pdf_standart = $request->pdf_standart;
-        $standart->save();
-
+        //dd(count($uploadFile));
+        //$standart->title = $request->title;
+        //$standart->doc_type_id = $request->doc_type_id;
+        //$standart->developed_organization = $request->developed_organization;
+        //$standart->organization = $request->organization;
+        //$standart->approved = $request->approved;
+        //$standart->entry_into_force = $request->entry_into_force;
+        //$standart->previous_edit = $request->previous_edit;
+        //$standart->status = $request->status;
+        //$standart->foreign_analogs = $request->foreign_analogs;
+        //$standart->pages = $request->pages;
+        //$standart->which_instead_standart = $request->which_instead_standart;
+        //$standart->scope = $request->scope;
+//
+        //$standart->normative_references = $request->normative_references;
+        //$standart->photo_normative_references = $request->photo_normative_references;
+        //$standart->classifications = $request->classifications;
+        //$standart->photo_classifications = $request->photo_classifications;
+        //$standart->technical_requirement = $request->technical_requirement;
+        //$standart->photo_technical_requirement = $request->photo_technical_requirement;
+        //$standart->safety_requirement = $request->safety_requirement;
+        //$standart->photo_safety_requirement = $request->photo_safety_requirement;
+        //$standart->acceptance_rule = $request->acceptance_rule;
+        //$standart->photo_acceptance_rules = $request->photo_acceptance_rules;
+        //$standart->control_method = $request->control_method;
+        //$standart->photo_control_method = $request->photo_control_method;
+        //$standart->appendix_a_reference = $request->appendix_a_reference;
+        //$standart->photo_appendix_a_reference = $request->photo_appendix_a_reference;
+        //$standart->bibliography = $request->bibliography;
+        //$standart->photo_bibliography = $request->photo_bibliography;
+        //$standart->bibliography_data = $request->bibliography_data;
+        //$standart->photo_bibliography_data = $request->photo_bibliography_data;
+        //$standart->doc_standart = $request->doc_standart;
+        //$standart->pdf_standart = $request->pdf_standart;
+        //$standart->save();
+        if (count($uploadFileScope)<2){
+            dump('manashu 1');
+            $standart->photo_scope = $request->photo_scope;
+        }
+        else{
+            if ($standart == true) {
+                $standart->images()->attach($request->photo_scope);
+                if ($standart == true)
+                    return redirect()->route('projects.index');
+                else
+                    return redirect()->back()->withErrors();
+            }
+        }
+        dd('stop');
 
 
 
