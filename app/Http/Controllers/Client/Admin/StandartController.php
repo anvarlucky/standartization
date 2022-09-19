@@ -21,7 +21,6 @@ class StandartController extends Controller
 
     public function show($id){
         $standart = Standart::where('id',$id)->first();
-
         return view($this->standart.'.show', ['standart' => $standart]);
     }
     public function doc($id)
@@ -57,6 +56,7 @@ class StandartController extends Controller
             dump('yuklandi...');
             dump($standart->images);
             dump(count($uploadFileScope));
+            //dd($standart->images());
 
         }
 

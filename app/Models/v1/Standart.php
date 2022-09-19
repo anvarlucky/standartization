@@ -158,10 +158,10 @@ class Standart extends Model
     public static function search($search)
     {
         $standart = Standart::select('*')
-            ->where($search->title, 'like', '%'.$search.'%')
-            /*->orWhere('description', 'like', '%'.$search.'%')
+            ->where('title', 'like', '%'.$search.'%')
+            ->orWhere('description', 'like', '%'.$search.'%')
             ->orWhere('doc_type_id', 'like', '%'.$search.'%')
-            ->orWhere('standart_number', 'like', '%'.$search.'%')*/
+            ->orWhere('standart_number', 'like', '%'.$search.'%')
             ->get();
         return $standart;
     }

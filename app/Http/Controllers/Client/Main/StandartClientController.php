@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\v1\Category;
 use App\Models\v1\Classification;
 use App\Models\v1\DocType;
+use Illuminate\Support\Facades\DB;
 
 class StandartClientController extends Controller
 {
@@ -22,8 +23,13 @@ class StandartClientController extends Controller
 
     public function search(Request $request)
     {
-        //$search = $request->except('_token');
-        $search = [
+        $standarts = Standart::all();
+        $categories = Category::all();
+        $classifications = Classification::all();
+        $doc_types = DocType::all();
+        $search = $request->post('title');
+
+        /*$search = [
             'search' =>
             [
             'title' => $request['title'],
@@ -32,11 +38,27 @@ class StandartClientController extends Controller
             'standart_number' => $request['standart_number']
         ]
         ];
-        dd($search);
-        $standart = Standart::select('*')->where($search)->get();
-        return view('main.standarts.index', [
-            'standarts' => $standart
-        ]);
+        dd($search);*/
+        $standart = Standart::search($search);
+
+        if ($request->title && $request->standart_number){
+           $standart = DB::table('standarts')->select('*')->where('title', 'like', '%'.$request->title.'%')
+                /*->where('doctype_id', 'like', '%'.$request->doc_type_id.'%')*/
+               ->where('standart_number', 'like', '%'.$request->standart_number.'%')
+                ->get();
+           //dd($standart);
+            return view('main.standarts.index', [
+                'standarts' => $standart
+                ,'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types
+            ]);
+        }
+
+        else {
+            return view('main.standarts.index', [
+                'standarts' => $standart
+                , 'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types
+            ]);
+        }
     }
 
     public function  show($id){
