@@ -16,7 +16,7 @@
                             <select class="form-select rounded-0 border-0 px-4 py-2 fz-18" name="category_id">
                                 <option></option>
                                 @foreach($categories as $category)
-                                    <option>{{ $category->name }}</option>
+                                    <option value={{$category->id}}>{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -24,7 +24,7 @@
                             <select class="form-select rounded-0 border-0 px-4 py-2 fz-18" name="classification_id">
                                 <option></option>
                                 @foreach($classifications as $classification)
-                                <option>{{$classification->name}}</option>
+                                <option value={{$category->id}}>{{$classification->name}}</option>
                                 @endforeach
                             </select>
                         </div>

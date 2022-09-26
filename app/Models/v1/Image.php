@@ -10,10 +10,12 @@ class Image extends Model
 {
     use HasFactory,SoftDeletes;
     protected $guarded = [];
+    protected $table = 'images';
 
-    public function standarts(){
+    public function standart(){
         //return $this->belongsToMany('App\Models\v1\Standart');
         //return $this->belongsToMany('App\Models\v1\Standart', 'images','id')->withTimestamps();
+        //return $this->belongsTo('App\Models\v1\Standart');
     }
     
 }

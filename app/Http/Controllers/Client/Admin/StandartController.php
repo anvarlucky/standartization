@@ -52,10 +52,12 @@ class StandartController extends Controller
                 $requestAll['photo_scope'] = $fileName;
                 $standart->photo_scope = explode(',',$fileName);
                 dump($standart->photo_scope);
+
             }
             dump('yuklandi...');
             dump($standart->images);
             dump(count($uploadFileScope));
+            dd('yuklandi papkaga');
             //dd($standart->images());
 
         }
@@ -180,7 +182,7 @@ class StandartController extends Controller
         else{
             $fileName = null;
         }
-        //$standart = Standart::create($requestAll);
+        $standart = Standart::create($requestAll);
         //dd(count($uploadFile));
         //$standart->title = $request->title;
         //$standart->doc_type_id = $request->doc_type_id;
@@ -215,7 +217,7 @@ class StandartController extends Controller
         //$standart->photo_bibliography_data = $request->photo_bibliography_data;
         //$standart->doc_standart = $request->doc_standart;
         //$standart->pdf_standart = $request->pdf_standart;
-        //$standart->save();
+        $standart->save();
         if (count($uploadFileScope)<2){
             dump('manashu 1');
             $standart->photo_scope = $request->photo_scope;
@@ -239,6 +241,7 @@ class StandartController extends Controller
             return redirect()->back();
         }
     }
+
 
     public function edit($id)
     {

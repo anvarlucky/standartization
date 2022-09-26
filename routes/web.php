@@ -16,6 +16,7 @@ use App\Http\Controllers\Client\Admin\ContactController;
 use \App\Http\Controllers\Client\Admin\UserController;
 use \App\Http\Controllers\Client\Admin\OfferController;
 use \App\Http\Controllers\Client\Admin\RoleController;
+use \App\Http\Controllers\Client\Admin\ImageController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Client\LocalizationController;
@@ -43,6 +44,8 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'admin'],function(){
     Route::resource('doctypes',DocTypeController::class);
     Route::resource('foreign_analogs',ForeignAnalogController::class);
     Route::resource('standarts',StandartController::class);
+    Route::get('images/upload',[ImageController::class,'uploadphoto'])->name('up');
+    Route::post('images/save',[ImageController::class,'savephoto'])->name('save');
     Route::resource('contacts1',ContactController::class);
     Route::resource('users',UserController::class);
     Route::resource('roles',RoleController::class);

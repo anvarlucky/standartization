@@ -151,7 +151,8 @@ class Standart extends Model
 
     public function images(){
         //return $this->belongsToMany('App\Models\v1\Image');
-        return $this->belongsToMany('App\Models\v1\Image', 'images','standart_id')->withTimestamps();
+        //return $this->belongsToMany('App\Models\v1\Image', 'images','standart_id')->withTimestamps();
+        //return $this->hasMany('App\Models\v1\Image');
     }
 
     //SEARCH

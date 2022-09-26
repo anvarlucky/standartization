@@ -29,36 +29,25 @@ class StandartClientController extends Controller
         $doc_types = DocType::all();
         $search = $request->post('title');
 
-        /*$search = [
-            'search' =>
-            [
-            'title' => $request['title'],
-            'description' => $request['description'],
-            'doc_type_id' => $request['doc_type_id'],
-            'standart_number' => $request['standart_number']
-        ]
-        ];
-        dd($search);*/
         $standart = Standart::search($search);
 
         if ($request->title && $request->standart_number){
            $standart = DB::table('standarts')->select('*')->where('title', 'like', '%'.$request->title.'%')
-                /*->where('doctype_id', 'like', '%'.$request->doc_type_id.'%')*/
                ->where('standart_number', 'like', '%'.$request->standart_number.'%')
                 ->get();
-           //dd($standart);
-            return view('main.standarts.index', [
-                'standarts' => $standart
-                ,'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types
-            ]);
         }
 
-        else {
-            return view('main.standarts.index', [
-                'standarts' => $standart
-                , 'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types
-            ]);
+        elseif ($request->standart_number){
+            $standart = DB::table('standarts')->select('*')->where('standart_number', 'like', '%'.$request->standart_number.'%')
+                ->get();
         }
+
+        elseif ($request->doc_type_id){
+            $standart = DB::table('standarts')->select('*')->where('doc_type_id', 'like', '%'.$request->doc_type_id.'%')
+                ->get();
+        }
+        return view('main.standarts.index',['standarts' => $standart,'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types]);
+
     }
 
     public function  show($id){
