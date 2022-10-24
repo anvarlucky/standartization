@@ -24,6 +24,7 @@ use App\Http\Controllers\Client\LocalizationController;
 Route::get('lang/{locale}',[LocalizationController::class,'index'])->name('lang');
 
 Route::get('/',[StandartClientController::class,'index']);
+Route::get('/indexlist',[StandartClientController::class,'indexlist'])->name('indexlist');
 Route::get('standart/{id}',[StandartClientController::class,'show'])->name('standart1');
 Route::post('standarts',[StandartClientController::class,'search'])->name('standart.search');
 Route::post('offers',[OfferClientController::class,'store'])->name('offers.store');

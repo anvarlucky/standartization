@@ -44,5 +44,6 @@
                 </table>
             </div>
         </div>
+        {{--<span class="pagination page-item " style="padding-top: 20px;">{!! $standarts->withQueryString()->links() !!}</span>--}}
     </div>
 @endsection

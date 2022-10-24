@@ -23,10 +23,9 @@ class ImageController extends Controller
        else{
             foreach ($request->image as $img){
                 dump($img);
-
                 //$image = Image::create($request->all());
             }
-           $image = Image::create($request->all());
+            $image = Image::create($request->all());
             dd('sdsd');
        }
         return redirect()->route('up');

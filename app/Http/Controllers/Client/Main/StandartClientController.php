@@ -21,6 +21,15 @@ class StandartClientController extends Controller
         return view('main.standarts.index',['standarts' => $standarts,'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types]);
     }
 
+    public function indexlist()
+    {
+        $standarts = Standart::all();
+        $categories = Category::all();
+        $classifications = Classification::all();
+        $doc_types = DocType::all();
+        return view('main.standarts.index-list',['standarts' => $standarts,'categories' => $categories, 'classifications' => $classifications, 'doc_types' => $doc_types]);
+    }
+
     public function search(Request $request)
     {
         $standarts = Standart::all();

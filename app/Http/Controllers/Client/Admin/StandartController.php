@@ -14,7 +14,7 @@ class StandartController extends Controller
 
     public function index()
     {
-        $standarts = Standart::all();
+        $standarts = Standart::paginate(1);
         return view($this->standart . '.index', ['standarts' => $standarts]);
     }
 
